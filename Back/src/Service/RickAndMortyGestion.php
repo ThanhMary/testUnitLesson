@@ -22,6 +22,7 @@ class RickAndMortyGestion{
         $this->entityManager = $entityManager;
     }
 
+  
     public function findAll(){
         return $this->repository->findAll();
     }

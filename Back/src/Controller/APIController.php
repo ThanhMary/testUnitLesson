@@ -56,5 +56,4 @@ class APIController extends AbstractController
         $cart = $rickAndMortyGestion->deleteProductFromCart($product);
         return $this->json($cart);
     }
-
 }

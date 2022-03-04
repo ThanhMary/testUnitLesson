@@ -10,6 +10,17 @@ class APIControllerTest extends WebTestCase
     public function testGetAllProductsApi(): void
     {
         $client = static::createClient();
+        $client->jsonRequest('GET', '/api/');
+        $response = $client->getResponse();
+       $this->assertResponseIsSuccessful();
+       $responseData = json_decode($response->getContent(), true);
+       $this->assertEquals(['message' => "Hello world"] , $responseData);
+
+    
+    }
+    public function testGetDefaultController(): void
+    {
+        $client = static::createClient();
         $client->jsonRequest('GET', '/');
         $response = $client->getResponse();
        $this->assertResponseIsSuccessful();
@@ -18,17 +29,6 @@ class APIControllerTest extends WebTestCase
 
     
     }
-    // public function testGetDefaultController(): void
-    // {
-    //     $client = static::createClient();
-    //     $client->jsonRequest('GET', '/');
-    //     $response = $client->getResponse();
-    //    $this->assertResponseIsSuccessful();
-    //    $responseData = json_decode($response->getContent(), true);
-    //    $this->assertEquals(['message' => "Hello"], $responseData);
-
-    
-    // }
 
 
 
@@ -50,6 +50,7 @@ class APIControllerTest extends WebTestCase
       //  dd($responseData);
         $this->assertEquals($product, $responseData);
     }
+
 
     public function testSizeOfTableProduct(): void
     {
@@ -130,6 +131,7 @@ class APIControllerTest extends WebTestCase
             $this->assertEquals([], $responseData["products"]);
        }
 
+ 
 
 
 }

@@ -18,7 +18,7 @@ class ProductEntityTest extends KernelTestCase
             ->getManager();
     }
 
-    public function testSearchByName()
+    public function testGetPrice()
     {
         $product = $this->entityManager
             ->getRepository(Product::class)

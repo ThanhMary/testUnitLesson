@@ -1,0 +1,45 @@
+name: CI
+on:
+  push:
+    branches: [ FinalProject ]
+  
+jobs:
+  Back:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Back
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+       
+      - name: Docker
+
+        run: |
+          docker-compose build 
+          docker-compose up -d
+
+      - name : Drop, create and migrate tables
+        run: |
+          docker-compose exec -T app composer install
+          docker-compose exec -T app php bin/console doctrine:database:drop --force --env=test || true
+          docker-compose exec -T app php bin/console doctrine:database:create --env=test
+          docker-compose exec -T app php bin/console doctrine:migrations:migrate -n --env=test
+          docker-compose exec -T app php bin/console doctrine:fixtures:load -n --env=test
+          docker-compose exec -T app php bin/phpunit
+
+  Front:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with: 
+          node-version: "14.x"
+      - name: Install dependencies
+        run: npm install
+      - name: Run test
+        run: npm test

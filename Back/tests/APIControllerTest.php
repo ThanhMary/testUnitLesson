@@ -18,6 +18,18 @@ class APIControllerTest extends WebTestCase
 
     
     }
+    // public function testGetDefaultController(): void
+    // {
+    //     $client = static::createClient();
+    //     $client->jsonRequest('GET', '/');
+    //     $response = $client->getResponse();
+    //    $this->assertResponseIsSuccessful();
+    //    $responseData = json_decode($response->getContent(), true);
+    //    $this->assertEquals(['message' => "Hello"], $responseData);
+
+    
+    // }
+
 
 
     public function testGetOneProduct(): void

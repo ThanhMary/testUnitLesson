@@ -1,15 +1,15 @@
 #Projet test Final: 
-BACK: Thanh NGUYEN
-FRONT: Dilane KENNE DOUANLA
+#BACK: Thanh NGUYEN
+#FRONT: Dilane KENNE DOUANLA
 
-Back:
+#Back:
 Test unitaire, 
 Test API 100%, 
 Faire un mock vers l’api Rick et Morty, 
 Test intégration base de données, 
 Cypress, 
 
-Front:
+#Front:
 Test unitaire, 
 Mock vers l’api Back, 
 Test fonctionnel des composants, 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { endpoint, ProductObject as Product } from "../App";
 
 const useHome = () => {

@@ -1,4 +1,4 @@
-import useProduct from "../Hooks/useProduct";
+import useProduct from "../hooks/useProduct";
 
 const Product = ({ setRoute, data: product }: any) => {
   const { quantity, message, loading, setQuantity, addProduct } =

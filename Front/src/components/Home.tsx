@@ -1,5 +1,5 @@
 import React from "react";
-import useHome from "../hooks/useHome";
+import useHome from "../Hooks/useHome";
 
 const Home = ({ setRoute }: { setRoute: (data: any) => void }) => {
   const { loading, products } = useHome();

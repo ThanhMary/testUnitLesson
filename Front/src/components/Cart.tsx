@@ -1,5 +1,5 @@
 import React from "react";
-import useCart from "../hooks/useCart";
+import useCart from "../Hooks/useCart";
 
 const Cart = ({ setRoute }: { setRoute: (data: any) => void }) => {
   const { loading, products, message, removeToCart } = useCart();

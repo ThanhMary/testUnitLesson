@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { endpoint, Product } from "../App";
+import { useEffect, useState } from "react";
+import { endpoint, ProductObject as Product } from "../App";
 
 const useCart = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -7,12 +7,13 @@ const useCart = () => {
   const [message, setMessage] = useState<string | null>(null);
 
   const loadCart = () => {
-    fetch(`${endpoint}/cart`)
+    return new Promise((resolve) => fetch(`${endpoint}/cart`)
       .then((res) => res.json())
       .then((res) => {
         setLoading(false);
         setProducts(res.products);
-      });
+        resolve(true);
+      }));
   };
 
   useEffect(() => {

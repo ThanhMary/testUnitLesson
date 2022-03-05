@@ -1,0 +1,39 @@
+.product{
+    background-color: silver;
+    margin: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+.product-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.toPanier{
+    margin: 50px 0  20px 50%;
+    transform: translateX(-50%);
+}
+
+button{
+    padding: 10px 20px;
+    border: 1px solid rgb(245, 239, 239);
+    color: white;
+    background-color: skyblue;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+input{
+    padding: 10px 20px;
+    border: 1px solid rgb(245, 239, 239);
+    border-radius: 5px;
+    font-weight: bold;
+}
+.back{
+    margin: 50px 0  20px 50%;
+    transform: translateX(-50%);
+}
+.supprimer{
+    margin-left:  50%;
+    transform: translateX(-50%);
+}

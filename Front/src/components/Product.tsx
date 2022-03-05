@@ -6,24 +6,25 @@ const Product = ({ setRoute, data: product }: any) => {
 
   return (
     <div>
-      {loading && <div>Loading....</div>}
-      {message && <p>{message}</p>}
-      <div onClick={() => setRoute({ route: "home" })}>Retour</div>
-      <div>
-        <div>
+      {loading && <div className="back">Loading....</div>}
+      {message && <p className="back">{message}</p>}
+      <button className="back" onClick={() => setRoute({ route: "home" })}>Retour</button>
+      <div className="supprimer">
+        <div className="product">
           <img src={product.image} alt="" />
           <p>Figurine de {product.name}</p>
           <p>Quantitée {product.quantity}</p>
         </div>
+        <div style={{ marginLeft: "25%" }}>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+            placeholder="Quantité à ajouter"
+          />
+          <button className="add" onClick={addProduct}>Ajouter au panier</button>
+        </div>
       </div>
-      <hr />
-      <input
-        type="number"
-        value={quantity}
-        onChange={(e) => setQuantity(Number(e.target.value))}
-        placeholder="Quantité à ajouter"
-      />
-      <button className="add" onClick={addProduct}>Ajouter au panier</button>
     </div>
   );
 };
